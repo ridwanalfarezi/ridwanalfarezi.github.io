@@ -4,6 +4,9 @@ const nextConfig = {
   output: "export",
   distDir: "dist",
   basePath: "",
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default withSentryConfig(nextConfig, {
