@@ -3,6 +3,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig = {
   output: "export",
   distDir: "dist",
+  basePath: "",
 };
 
 export default withSentryConfig(nextConfig, {
