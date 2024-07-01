@@ -2,11 +2,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  distDir: "dist",
-  basePath: "",
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  basePath: "/",
 };
 
 export default withSentryConfig(nextConfig, {
