@@ -1,8 +1,8 @@
+import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -32,7 +32,7 @@ export const Hero = () => {
             words="I am Ridwan Alfarezi"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            A Front-End Web Developer base in Indonesia.
+            Frontend Engineer | React & Next.js Developer based in Indonesia
           </p>
 
           <Link href="/projects">

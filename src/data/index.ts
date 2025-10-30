@@ -8,7 +8,7 @@ export const gridItems = [
   {
     id: 1,
     title:
-      "I prioritize clients communication and collaboration to bring successful projects",
+      "I'm a frontend engineer who enjoys building fast, reliable, and easy-to-use web applications.",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -107,32 +107,49 @@ export const projects = [
 export const workExperience = [
   {
     id: 1,
-    title: "Freelancer Front-End Web Developer",
-    desc: "As a freelance web developer, I specialize in crafting bespoke digital solutions tailored to meet the unique needs of my clients. I work collaboratively with clients to bring their visions to life. From building responsive websites that adapt seamlessly to various devices to optimizing performance and user experience, I thrive on delivering high-quality results that exceed expectations. Whether it's designing custom themes, implementing complex functionalities, or providing ongoing maintenance and support, I am committed to delivering excellence in every project.",
+    title: "Frontend Engineer / Frontend Developer",
+    desc: "I focus on developing and maintaining user-facing features for Maleo AI's SaaS products, internal tools, and websites using React and Next.js. I work closely with designers and backend engineers to ensure responsive, reliable, and well-structured front-end implementations. My role involves improving performance, maintaining code quality, and refining front-end architecture to make ongoing development smoother and more scalable. Previously as Frontend Developer, I supported web application development by turning design concepts into functional interfaces, created wireframes, prototypes, and mockups, and helped build and maintain the company's design system. Using AI-assisted tools, I streamlined design slicing and API integration processes, cutting development time by nearly 50 percent.",
     className: "md:col-span-2",
-    company: "Freelance",
-    yearstart: "Desember 2022",
+    company: "Maleo AI",
+    yearstart: "March 2025",
     yearend: "Present",
   },
   {
     id: 2,
-    title: "Front-End Web Developer Intern",
-    desc: "During my internship, I actively contributed to various aspects of software development, focusing on enhancing user experience and functionality. Key responsibilities included updating the application interface, identifying and resolving software bugs, conceptualizing and implementing new features aligned with user needs and market trends, developing skills in software development, problem-solving, and teamwork.",
+    title: "Freelance Web Developer",
+    desc: "I design and build custom websites and web applications for clients across various industries. My work emphasizes responsive design, optimized performance, and scalable front-end architecture. I manage each project from planning and design to development and deployment, ensuring that every product aligns with both technical and business goals.",
+    className: "md:col-span-2",
+    company: "Freelance",
+    yearstart: "December 2022",
+    yearend: "Present",
+  },
+  {
+    id: 3,
+    title: "Programming Instructor",
+    desc: "Teach programming and problem-solving to students and community members through hands-on projects. Build trust and engagement using a Give First, Take Later approach. Invited repeatedly for workshops thanks to proven impact and mentorship skills.",
+    className: "md:col-span-2",
+    company: "Self-employed",
+    yearstart: "September 2022",
+    yearend: "Present",
+  },
+  {
+    id: 4,
+    title: "Frontend Developer",
+    desc: "I helped improve user interfaces, enhance design consistency, and fix key bugs within the Smarteschool application. I also implemented new features based on user needs and collaborated closely with the development team to deliver a better product.",
     className: "md:col-span-2",
     company: "PT ITHO INDOSTOCK",
     yearstart: "June 2023",
     yearend: "April 2024",
   },
   {
-    id: 3,
-    title: "Front-End Developer - Freelance",
-    desc: "Rally the Locals is a platform that showcases local businesses on a meaningful level. We share stories, highlight the impact they've made in the community and allow customers to know the people behind the products and services they enjoy. As a Front-End Web Developer for Rally the Locals, I played a crucial role in bringing 'Puro Sabor', an immersive cultural event celebrating Latin America, to life through its online presence.",
+    id: 5,
+    title: "Frontend Developer",
+    desc: "I developed a responsive website for an event called Puro Sabor, celebrating Latin American culture. The project included integrating multimedia content, vendor listings, and optimizing for search visibility and performance.",
     className: "md:col-span-2",
     company: "Rally the Locals",
     yearstart: "October 2023",
     yearend: "November 2023",
   },
-  
 ];
 
 export const socialMedia = [
@@ -144,7 +161,7 @@ export const socialMedia = [
   {
     id: 2,
     img: "/insta.svg",
-    link: "https://www.instagram.com/ridwanalfarezi18/",
+    link: "https://www.instagram.com/ridwanalfarezii/",
   },
   {
     id: 3,
