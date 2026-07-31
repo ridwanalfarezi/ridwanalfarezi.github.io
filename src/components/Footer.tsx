@@ -10,7 +10,7 @@ const Footer = () => {
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-full opacity-50"
         />
       </div>
 
@@ -19,7 +19,7 @@ const Footer = () => {
           Have an idea in mind?
           <span className="text-blue"> Ready to grow your business?</span>
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-white-200 md:mt-10 my-5 text-center text-lg">
           Let&apos;s discuss how I can help you achieve to grow your business.
         </p>
         <a href="mailto:alfareziridwan@gmail.com">
@@ -31,7 +31,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex mt-16 flex-col gap-y-5 items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="text-lg font-light">
           Copyright © {new Date().getFullYear()} Ridwan Alfarezi
         </p>
 

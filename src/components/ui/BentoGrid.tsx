@@ -1,5 +1,6 @@
 "use client";
 import animationData from "@/data/confetti.json";
+import { featuredStack } from "@/data";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import Lottie from "react-lottie";
 import { BackgroundGradientAnimation } from "./BgGradient";
 import GridGlobe from "./GridGlobe";
 import MagicButton from "./MagicButton";
+import { TechBadge } from "./TechBadge";
 
 export const BentoGrid = ({
   className,
@@ -33,7 +35,6 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
@@ -48,9 +49,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["Bootstrap", "TailwindCSS", "JavaScript"];
-  const rightLists = ["React.js", "Next.js", "Typescript"];
-
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -63,7 +61,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "alfareziridwan@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -93,7 +91,7 @@ export const BentoGridItem = ({
               <img
                 src={img}
                 alt={img}
-                className={cn(imgClassName, "object-cover object-center ")}
+                className={cn(imgClassName, "object-cover object-center")}
               />
             )}
           </div>
@@ -106,7 +104,6 @@ export const BentoGridItem = ({
               <img
                 src={spareImg}
                 alt={spareImg}
-                //   width={220}
                 className="object-cover object-center w-full h-full"
               />
             )}
@@ -123,47 +120,49 @@ export const BentoGridItem = ({
               "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
             )}
           >
-            <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
-              {description}
-            </div>
-            <div
-              className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-            >
-              {title}
-            </div>
+            {id === 3 ? (
+              <>
+                <div className="z-10 max-w-96 font-sans text-3xl font-bold lg:text-4xl">
+                  {title}
+                </div>
+                <div className="z-10 mt-6 grid w-full grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+                  {featuredStack.map((item) => (
+                    <TechBadge
+                      key={item}
+                      className="min-h-12 w-full px-3 py-2 text-center text-white lg:text-lg"
+                    >
+                      {item}
+                    </TechBadge>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <div
+                  className={cn(
+                    "z-10 font-sans text-sm font-extralight text-[#C1C2D3] md:text-xs lg:text-base",
+                    id === 5
+                      ? "whitespace-nowrap md:max-w-none"
+                      : "md:max-w-32"
+                  )}
+                >
+                  {description}
+                </div>
+                <div
+                  className={cn(
+                    "relative z-10 max-w-96 font-sans text-xl font-bold lg:text-3xl",
+                    id === 2 && "z-30"
+                  )}
+                >
+                  {title}
+                </div>
+              </>
+            )}
 
             {id === 2 && <GridGlobe />}
 
-            {id === 3 && (
-              <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-                <div className="flex flex-col gap-4">
-                  {leftLists.map((item, i) => (
-                    <span
-                      key={i}
-                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                  <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                  {rightLists.map((item, i) => (
-                    <span
-                      key={i}
-                      className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
             {id === 6 && (
-              <div className="mt-5 relative">
+              <div className="relative mt-5 flex w-full justify-center">
                 <div
                   className={`absolute -bottom-5 right-0 ${
                     copied ? "block" : "block"
@@ -173,11 +172,12 @@ export const BentoGridItem = ({
                 </div>
 
                 <MagicButton
-                  title={copied ? "Email is Copied!" : "Copy my email address"}
+                  title={copied ? "Email copied" : "Copy my email"}
                   icon={<IoCopyOutline />}
                   position="left"
                   handleClick={handleCopy}
                   className="!bg-[#161A31]"
+                  containerClassName="w-full max-w-[22rem] md:mt-10"
                 />
               </div>
             )}

@@ -3,15 +3,12 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { FloatingNavbar } from "@/components/ui/FloatingNavbar";
 import { navItems } from "@/data";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ridwan Alfarezi",
   description:
-    "Front-End Web Developer from Indonesia with expertise in React and Next.js",
+    "Frontend Engineer from Indonesia building reliable web products with React, Next.js, TypeScript, and modern full-stack tooling.",
 };
 
 export default function RootLayout({
@@ -20,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

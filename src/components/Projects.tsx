@@ -1,4 +1,6 @@
+"use client";
 import { projects } from "@/data";
+import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa";
 import { PinContainer } from "./ui/3d-pin";
 
@@ -6,13 +8,17 @@ const Projects = () => {
   return (
     <div className="py-20">
       <h1 className="heading">
-        Some of <span className="text-blue">selection projects</span>
+        Selected work with <span className="text-blue">proof behind it</span>
       </h1>
+      <p className="mx-auto mt-5 max-w-2xl text-center text-lg leading-8 text-white-100">
+        Explore live products, the decisions behind them, and the workflows I
+        was responsible for delivering.
+      </p>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-8 mt-10">
-        {projects.map(({ id, title, des, img, iconLists, link }) => (
+        {projects.map(({ id, slug, title, des, img, link }) => (
           <div
             key={id}
-            className="sm:h-[35rem] lg:min-h-[32.5rem] h-[32.5rem] flex items-center justify-center sm:w-[570px] lg:w-[40vw] w-[80vw]"
+            className="sm:h-[39rem] lg:min-h-[36rem] h-[36rem] flex items-center justify-center sm:w-[570px] lg:w-[40vw] w-[80vw]"
           >
             <PinContainer title={link} href={link} id={id}>
               <div className="relative flex items-center justify-center sm:w-[570px] lg:w-[40vw] w-[80vw] overflow-hidden lg:h-[30vh] mb-10 sm:h-[40vh] h-[30vh]">
@@ -21,29 +27,29 @@ const Projects = () => {
                 </div>
                 <img src={img} alt={title} className="z-10 absolute bottom-0" />
               </div>
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-3xl md:text-2xl text-xl line-clamp-2">
                 {title}
               </h1>
-              <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
+              <p className="mt-3 line-clamp-3 text-lg leading-relaxed">
                 {des}
               </p>
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {iconLists.map((icon, index) => (
-                    <div
-                      key={icon}
-                      className="border border-white/[0.2] rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{ transform: `translateX-${5 * index * 2}px` }}
+              <div className="flex items-center justify-end mt-7 mb-3">
+                <div className="flex items-center gap-4">
+                  {slug && (
+                    <Link
+                      href={`/projects/${slug}`}
+                      onClick={(event) => event.stopPropagation()}
+                      className="text-base font-semibold text-cyan-300 underline-offset-4 hover:underline"
                     >
-                      <img src={icon} alt={icon} className="p-2" />
-                    </div>
-                  ))}
-                </div>
-                <div className="flex justify-center items-center gap-3">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-blue-100">
-                    View Project
-                  </p>
-                  <FaLocationArrow color="#06b6d4" />
+                      Case study
+                    </Link>
+                  )}
+                  <div className="flex justify-center items-center gap-3">
+                    <p className="flex lg:text-2xl text-lg text-blue-100">
+                      View Project
+                    </p>
+                    <FaLocationArrow color="#06b6d4" />
+                  </div>
                 </div>
               </div>
             </PinContainer>

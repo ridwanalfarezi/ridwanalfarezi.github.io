@@ -2,12 +2,17 @@
 import { workExperience } from "@/data";
 import { motion } from "framer-motion";
 import { Button } from "./ui/MovingBorders";
+
 const Experience = () => {
   return (
     <div className="py-20">
       <h1 className="heading">
-        My <span className="text-blue">work experience</span>
+        Work that <span className="text-blue">shipped</span>
       </h1>
+      <p className="mx-auto mt-5 max-w-2xl text-center text-lg leading-8 text-white-100">
+        A concise record of the products, systems, and outcomes I contributed to
+        across employment, freelance work, and teaching.
+      </p>
       <div className="w-full mt-12 grid grid-cols-1 gap-10">
         {workExperience.map((exp) => (
           <motion.div
@@ -23,13 +28,13 @@ const Experience = () => {
             >
               <div className="flex flex-col items-center p-3 py-6 md:p-5 lg:p-10 gap-5">
                 <div className="lg:ms-5">
-                  <h1 className="text-xl text-start md:text-2xl font-bold">
+                  <h1 className="text-2xl text-start md:text-3xl font-bold">
                     {exp.title}
                   </h1>
-                  <p className="text-start text-md font-semibold mt-3">
-                    {exp.company} • {exp.yearstart} - {exp.yearend}
+                  <p className="text-start text-lg font-semibold mt-3 text-cyan-100">
+                    {exp.company} / {exp.yearstart} - {exp.yearend}
                   </p>
-                  <p className="text-start text-white-100 mt-3 font-semibold leading-loose">
+                  <p className="text-start text-lg text-white-100 mt-3 leading-8">
                     {exp.desc}
                   </p>
                 </div>

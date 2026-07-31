@@ -72,6 +72,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 1.125rem;
   }
   button {
     @apply active:outline-none;
@@ -80,7 +81,7 @@
 
 @layer utilities {
   .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+    @apply font-bold text-5xl md:text-6xl text-center;
   }
 
   .black-gradient {
